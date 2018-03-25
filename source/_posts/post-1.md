@@ -1,7 +1,8 @@
 ---
-title: {{ title }}
-date: {{ date }}
+title: post 1
+date: 2018-03-25 21:01:29
 tags:
+featured_image: /content/photo1.jpg
 ---
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit,
