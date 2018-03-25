@@ -1,11 +1,14 @@
 <h1>Low Quality Image Placeholders example</h1>
 
-<% page.posts.each(function (post, i) { %>
+<% page.posts && page.posts.each(function (post, i) { %>
     <article class="post">
         <h3><%- post.title %></h3>
 
         <div class="post-content">
-            <div class="cover-image" style="background-image: url(<%- url_for(post.featured_image)%>)"></div>
+            <div class="cover-image"
+                 style="background-image: <%- lqip_for(post.featured_image) %>"
+                 data-lazy-src="<%- url_for(post.featured_image)%>"
+            ></div>
             <div class="post-excerpt">
                 <%- post.excerpt %>
             </div>

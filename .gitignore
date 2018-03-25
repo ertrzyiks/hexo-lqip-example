@@ -58,5 +58,6 @@ typings/
 .env
 
 db.json
+tmp.json
 public/
 .deploy*/

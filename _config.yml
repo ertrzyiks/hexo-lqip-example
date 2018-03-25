@@ -74,3 +74,11 @@ pagination_dir: page
 ## Plugins: https://hexo.io/plugins/
 ## Themes: https://hexo.io/themes/
 theme: example
+
+lqip:
+  default_type: potrace
+
+  potrace:
+   steps: 2
+   color: '#dedede'
+   background: transparent
