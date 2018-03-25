@@ -4,15 +4,10 @@ var streamToArray = require('stream-to-array')
 var streamToArrayAsync = Promise.promisify(streamToArray)
 const replace = require('string-replace-async')
 var posterize = require('./lqip/posterize')
+var getCache = require('./lqip.cache').getCache
+var saveCache = require('./lqip.cache').saveCache
 
-var fs = require('fs')
-var tmp
-try {
-  tmp = fs.readFileSync('tmp.json').toString()
-} catch (ex) {
-  tmp = '{}'
-}
-var cache = JSON.parse(tmp)
+var cache = getCache()
 
 var config = hexo.config.lqip || {}
 
@@ -43,8 +38,10 @@ function processHtmlFile(route, content) {
         return posterize(buffer, config.potrace)
       })
       .then(function (svg) {
-        if (!cache[url]) cache[url] = svg
-        fs.writeFileSync('tmp.json', JSON.stringify(cache))
+        if (!cache[url]) {
+          cache[url] = svg
+          saveCache(cache)
+        }
 
         return "url('data:image/svg+xml," + encodeURI(svg) + "')"
       })
