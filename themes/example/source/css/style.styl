@@ -17,6 +17,12 @@
   100%
     opacity: 1
 
+@keyframes lazy-image-real-image
+  0%
+    opacity: 0.1
+  100%
+    opacity: 1
+
 .cover-image
   animation: lazy-image-placeholder 300ms
   flex: 1 0 50%
@@ -25,4 +31,4 @@
   background-position: center
 
 .cover-image.is-loaded
-  animation: none
+  animation: lazy-image-real-image 200ms ease-in
