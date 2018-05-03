@@ -1,0 +1,7 @@
+lqip:
+  default_type: potrace
+
+  potrace:
+   steps: 2
+   color: '#dedede'
+   background: transparent
