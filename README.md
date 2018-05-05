@@ -1,6 +1,6 @@
 # hexo-lqip-example
 An example Hexo blog using low quality image placeholder technique
-A demo for [hexo-filter-lqip](https://github.com/ertrzyiks/hexo-filter-lqip) plugin.
+A demo for [hexo-filter-lqip](https://github.com/hexojs/hexo-filter-lqip) plugin.
 
 ## Instruction
 
