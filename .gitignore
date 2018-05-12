@@ -58,6 +58,6 @@ typings/
 .env
 
 db.json
-tmp.json
+lqip-cache.json
 public/
 .deploy*/
